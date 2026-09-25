@@ -78,7 +78,7 @@ app.post('/api/whisper', async (req, res) => {
     console.log("Attempting transcription via Gemini Multimodal Audio...");
     
     const result = await gemini.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-1.5-flash',
       contents: [
         {
           inlineData: {
@@ -153,7 +153,7 @@ ${message}
 `;
 
     const response = await gemini.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-1.5-flash',
       contents: prompt,
     });
 
@@ -282,7 +282,7 @@ Do not wrap it in markdown block like \`\`\`json unless needed, but if you do, m
 `;
 
     const response = await gemini.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-1.5-flash",
       contents: prompt,
       config: {
         tools: [{ googleSearch: {} }],
@@ -400,7 +400,7 @@ Do not write anything else.
 `;
 
     const response = await gemini.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-1.5-flash',
       contents: [
         {
           inlineData: {
